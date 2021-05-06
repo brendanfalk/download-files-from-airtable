@@ -1,0 +1,16 @@
+{
+  "name": "airtable-scrape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "get_urls": "node index.js",
+    "download": "xargs -n 1 curl -O < out.txt"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "airtable": "^0.11.0",
+    "dotenv": "^9.0.0"
+  }
+}
