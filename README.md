@@ -1,5 +1,7 @@
 # Download Files from Airtable
 
+⛔️ Warning: This documentation isn't 100% correct you will have to read the code before using this⛔️
+
 Get all this information from Airtable's API docs
 ```
 git clone https://github.com/falky97/download-files-from-airtable.git airtable-download
