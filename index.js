@@ -21,7 +21,7 @@ base('Candidates').select({
         try {
             // The record.get for resume returns an array of all the records
             var url = record.get('Resume')[0]["url"]
-            fs.appendFile('out.txt', url + "\n", function (err) {
+            fs.appendFile('out/out.txt', url + "\n", function (err) {
                 if (err) throw err;
                 // console.log('Saved!');
             });
