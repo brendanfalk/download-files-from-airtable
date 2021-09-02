@@ -9,10 +9,10 @@ var Airtable = require('airtable');
 var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BASE_ID);
 
 
-base('Candidates').select({
+base(process.env.BASE_NAME).select({
     // Selecting the first 3 records in All Applicants:
     maxRecords: 1000,
-    view: "All Applicants"
+    view: process.env.VIEW_NAME
 }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
 
@@ -20,7 +20,7 @@ base('Candidates').select({
 
         try {
             // The record.get for resume returns an array of all the records
-            var url = record.get('Resume')[0]["url"]
+            var url = record.get(process.env.COLUMN_NAME)[0]["url"]
             fs.appendFile('out/out.txt', url + "\n", function (err) {
                 if (err) throw err;
                 // console.log('Saved!');
@@ -29,8 +29,6 @@ base('Candidates').select({
             console.log(error)
 
         }
-
-
 
         // console.log(record.get('Resume')[0]["url"])
 

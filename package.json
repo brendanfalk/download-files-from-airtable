@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "get_urls": "node index.js",
-    "download": "cd out; rm out.txt; xargs -n 1 curl -O < out.txt"
+    "get_urls": "mkdir out; rm out/out.txt 2> /dev/null; touch out/out.txt; node index.js",
+    "download": "cd out; xargs -n 1 curl -O < out.txt"
   },
   "author": "",
   "license": "ISC",
